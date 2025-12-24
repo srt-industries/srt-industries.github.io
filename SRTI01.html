@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRTI01 Manual</title>
+    <style>
+        @font-face {
+            font-family: 'MONOSPACE821BOLDBT';
+            src: url('MONOSPACE821BOLDBT.ttf') format('truetype');
+        }
+        
+        body {
+            background-color: black;
+            color: #d3d3d3;
+            font-family: 'MONOSPACE821BOLDBT', monospace;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            color: #d3d3d3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #d3d3d3;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        a:hover {
+            color: #f0f0f0;
+        }
+
+        .knockout {
+            background-color: white;
+            color: black;
+        }
+        
+        .knob-icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('knob-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+                
+        .knob-indent-icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('knob-indent-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .switch-icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('switch-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .select-switch-icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('select-switch-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .button-icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('button-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .slider-icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url('slider-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 20px 15px;
+        }
+        
+        td {
+            vertical-align: top;
+        }
+        
+        .control-column {
+            width: 70px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .name-column {
+            width: 150px;
+            color: #f0f0f0;
+            font-weight: bold;
+        }
+        
+        .description-column {
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <h1>SRTI01 Manual</h1>
+
+    <h2>Overview:</h2>
+    <p>
+        You have 4 loops with a max length of 21 seconds of stereo audio each. <br>
+        Input can be a stereo signal or 1 to 2 mono signals.<br>
+        11 master effects and 3 loop effects are available to manipulate the sound.<br>
+        Loops can be individually pitched up and down and reversed.<br>
+        All effects can be randomized by holding down the Random button. <br>
+        Each loop can be set to degrade over time.<br>
+        Needs 9V DC power supply (center negative).<br>
+        An optional momentary normally open foot pedal can be used to control recording or overdubbing.<br>
+    </p>
+
+    <h2>Controls:</h2>
+
+    <table>
+        <tr>
+            <td class="control-column"><div class="select-switch-icon" alt="switch"></div></td>
+            <td class="name-column">Select loop A/B/C/D</td>
+            <td class="description-column">All <span class="knockout">loop specific controls</span> work in the selected loop</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="button-icon" alt="button"></div></td>
+            <td class="name-column"><span class="knockout">Record</span></td>
+            <td class="description-column">Record on the selected loop.<br>The recording determines the length of the loop.<br>Recording deletes any previous recording on that loop.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="slider-icon" alt="slider"></div></td>
+            <td class="name-column"><span class="knockout">Loop volumes</span></td>
+            <td class="description-column">Control the volume of each loop individually. Unity indicated by long line.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="button-icon" alt="button"></div></td>
+            <td class="name-column"><span class="knockout">Overdub</span></td>
+            <td class="description-column">Overdub on the selected loop.<br>Overdub adds to the existing recording on that loop.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="button-icon" alt="button"></div></td>
+            <td class="name-column"><span class="knockout">Resample</span></td>
+            <td class="description-column">
+                Resample to the selected loop.<br>
+                Records the current master output with any effects to the selected loop.<br>
+                A short click will capture the previous loop length of the selected loop.<br>
+                A long hold will capture the current output until the button is released.<br>
+                After resampling all effects are reset to their default off position.
+                (all the way to the left or in the center as indicated). <br>
+                Knobs will not respond until they have been turned back to default/off position. Then they can be activated again.
+                If you resample to a loop with its gain turned down, effects will not be reset and you can continue to modify the sound.
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="button-icon" alt="button"></div></td>
+            <td class="name-column"><span class="knockout">Reverse</span></td>
+            <td class="description-column">Reverse the playback direction of the selected loop.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-indent-icon" alt="knob"></div></td>
+            <td class="name-column"><span class="knockout">Degrade</span></td>
+            <td class="description-column">No effect at center. To the left the loop gets thinner and to the right it loses bits of sound over time.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="switch-icon" alt="switch"></div></td>
+            <td class="name-column"><span class="knockout">Decay</span></td>
+            <td class="description-column">When set to on, the effect of the Degrade knob will persist on the loop and gradually degrade the sound over time. Decay is not active if the loop is being pitched (unless in Shift mode).</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-indent-icon" alt="knob"></div></td>
+            <td class="name-column"><span class="knockout">Pitch</span></td>
+            <td class="description-column">
+                Pitch the selected loop up and down. Center is unity. 
+                Pitching changes the speed of the loop as well (e.g. pitching down 1 octave will take twice the time) if the Shift mode is off.
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="switch-icon" alt="switch"></div></td>
+            <td class="name-column">Shift</td>
+            <td class="description-column">When set to on, the Pitch knob will stop controlling speed and turn into a master pitch shifter. The output will be pitch shifted without changing speed.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-indent-icon" alt="knob"></div></td>
+            <td class="name-column"><span class="knockout">Filter</span></td>
+            <td class="description-column">Apply a filter to the selected loop. Center is no effect. Turning left applies a lowpass filter, turning right applies a highpass filter.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-icon" alt="knob"></div></td>
+            <td class="name-column">Input</td>
+            <td class="description-column">Control the volume of the input.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="switch-icon" alt="switch"></div></td>
+            <td class="name-column">Mute Input</td>
+            <td class="description-column">When set to on, the input will not be monitored in the output, however it will still be recorded when recording or overdubbing.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-icon" alt="knob"></div></td>
+            <td class="name-column">Tape</td>
+            <td class="description-column">Add tape saturation, filtering and pitch instability to the overall output.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-icon" alt="knob"></div></td>
+            <td class="name-column">Saturate</td>
+            <td class="description-column">Increase gain and add saturation and compression to the overall output.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="switch-icon" alt="switch"></div></td>
+            <td class="name-column">In Stereo/Monomix</td>
+            <td class="description-column">When set to In Stereo, the input is stereo.<br>
+                When set to Monomix, left and right input channels are mixed to mono, enabling 2 mono signals to be used together.
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="switch-icon" alt="switch"></div></td>
+            <td class="name-column">Rec Hold/Click</td>
+            <td class="description-column">
+                When set to Rec Hold, recording and overdubbing happens while the Record or Overdub button is held down.
+                <br>When set to Rec Click, recording and overdubbing starts and stops with each press of the Record or Overdub button.
+                The pedal also follows this setting.
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="switch-icon" alt="switch"></div></td>
+            <td class="name-column">Pedal Rec/Dub</td>
+            <td class="description-column">Sets the function of an external foot pedal connected to the pedal input jack.<br>When set to Rec, the pedal controls recording on the selected loop.<br>When set to Dub, the pedal controls overdubbing on the selected loop.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="button-icon" alt="button"></div></td>
+            <td class="name-column">Clear</td>
+            <td class="description-column">A short click will clear the selected loop.<br>A long hold will clear all loops. All loop lengths are set to the length of the hold.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="button-icon" alt="button"></div></td>
+            <td class="name-column">Random</td>
+            <td class="description-column">Hold down to randomize all effect settings. When let go, the settings will return to current knob positions.<br>
+                 While holding randomize, effects can be changed by catching their randomized position with the knob. This allows you to keep all other randomized settings
+                but change the pitch for example.<br>
+                The randomized sound can be kept by resampling while holding the Random button. Let go of the random button when you have finished resampling.
+                Be aware that any knobs not in their initial position will affect the sound after resampling.
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-indent-icon" alt="knob"></div></td>
+            <td class="name-column">Fragment</td>
+            <td class="description-column">To the left applies fragmentation to the spectrum like a bad signal. To the right the sound is fragmented in time like crambled audio.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-indent-icon" alt="knob"></div></td>
+            <td class="name-column">Failure</td>
+            <td class="description-column">To the left introduces mechanical failure resulting in wow and flutter. To the right introduces digital information failure resulting in noise and reduced fidelity.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-indent-icon" alt="knob"></div></td>
+            <td class="name-column">Tone</td>
+            <td class="description-column">To the left low frequencies are enhanced and high frequencies are attenuated. To the right high frequencies are enhanced and low frequencies are attenuated.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-indent-icon" alt="knob"></div></td>
+            <td class="name-column">Starve</td>
+            <td class="description-column">Simulates the effect of amplifiers starved for power, with 2 different modes to the left and to the right.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-indent-icon" alt="knob"></div></td>
+            <td class="name-column">Octave</td>
+            <td class="description-column">To the left adds an octave down version to the signal. To the right adds an octave up version to the signal.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-icon" alt="knob"></div></td>
+            <td class="name-column">Delay</td>
+            <td class="description-column">Add a modulated delay. Knob sets dry/wet amount. Delay length is fixed. Feedback follows amount.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-icon" alt="knob"></div></td>
+            <td class="name-column">Grains</td>
+            <td class="description-column">Add of a long granular delay. Knob sets dry/wet amount. Delay length is fixed. Feedback follows amount.</td>
+        </tr>
+        
+        <tr>
+            <td class="control-column"><div class="knob-icon" alt="knob"></div></td>
+            <td class="name-column">Reverb</td>
+            <td class="description-column">Add reverb. Knob sets dry/wet amount.</td>
+        </tr>
+    </table>
+
+        
+    <h2>Comments:</h2>
+    <p>
+    </p>
+    <p>
+        When resampling, all the sound from all the loops and input is captured and recorded to the selected loop. 
+        If you want to resample only a specific loop, turn down the volume of other loops before resampling.
+    </p>
+    <p>
+        When using the short click resample, all changes made during the last loop length will be captured.
+        If the loop pitch has been changed, the length of the resample will be based on the new pitch speed.
+        If you do not want to hear effects being changed, wait for a full loop cycle before resampling.
+    </p>
+    <p> 
+        If the input is muted and you start recording or overdubbing, 
+        the volume of the input is set by the loop volume sliders. 
+        This lets you record the loop without hearing it, until you bring up the loop volume.
+    </p>
+    <p>
+        When in Shift mode, Decay is still active even when pitching the loop.
+    </p>
+    <p>
+        Input is not amplified so low volume signals like microphones might need preamplification.
+    </p>
+    <p>
+        Loops are not saved when powering off the unit.
+    </p>
+    <p>
+        When resampling and starting the unit, certain internal effect parameters are randomized. This avoid resonance on multiple resamplings.
+    </p>
+    <p>
+        Only a momentary normally open foot pedal can be used. 
+        Using a normally closed pedal will cause the unit to malfunction.
+    </p>
+    <p>
+        The loops are free running and can only be synced through the timing of recording and resampling.
+        More precise timing control can be achieved by using the rec Click mode. 
+        All loops can be set to the same length by holding down the Clear button for the desired length and then only overdubbing on the loops.
+        Loop lengths can doubled or halfed by resampling the loop with the Pitch knob set to 12 semitones down or up.
+    </p>
+
+    <a href="index.html">Go to main page</a>
+</body>
+</html>
