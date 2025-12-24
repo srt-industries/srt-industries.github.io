@@ -140,13 +140,13 @@
     <h2>Overview:</h2>
     <p>
         You have 4 loops with a max length of 21 seconds of stereo audio each. <br>
-        Input can be a stereo signal or 1 to 2 mono signals.<br>
+        Input can be a stereo signal or 1/2 mono signals.<br>
         11 master effects and 3 loop effects are available to manipulate the sound.<br>
         Loops can be individually pitched up and down and reversed.<br>
         All effects can be randomized by holding down the Random button. <br>
         Each loop can be set to degrade over time.<br>
         Needs 9V DC power supply (center negative).<br>
-        An optional momentary normally open foot pedal can be used to control recording or overdubbing.<br>
+        An optional momentary normally open foot pedal can be used for hands free recording or overdubbing.<br>
     </p>
 
     <h2>Controls:</h2>
@@ -155,20 +155,20 @@
         <tr>
             <td class="control-column"><div class="select-switch-icon" alt="switch"></div></td>
             <td class="name-column">Select loop A/B/C/D</td>
-            <td class="description-column">All <span class="knockout">loop specific controls</span> work in the selected loop</td>
+            <td class="description-column">All <span class="knockout">loop specific controls</span> work on the selected loop.</td>
         </tr>
-        
-        <tr>
-            <td class="control-column"><div class="button-icon" alt="button"></div></td>
-            <td class="name-column"><span class="knockout">Record</span></td>
-            <td class="description-column">Record on the selected loop.<br>The recording determines the length of the loop.<br>Recording deletes any previous recording on that loop.</td>
-        </tr>
-        
+       
         <tr>
             <td class="control-column"><div class="slider-icon" alt="slider"></div></td>
             <td class="name-column"><span class="knockout">Loop volumes</span></td>
             <td class="description-column">Control the volume of each loop individually. Unity indicated by long line.</td>
         </tr>
+        
+        <tr>
+            <td class="control-column"><div class="button-icon" alt="button"></div></td>
+            <td class="name-column"><span class="knockout">Record</span></td>
+            <td class="description-column">Record on the selected loop.<br>The recording length determines the length of the loop.<br>Recording deletes any previous recording on that loop.</td>
+        </tr>    
         
         <tr>
             <td class="control-column"><div class="button-icon" alt="button"></div></td>
@@ -183,9 +183,8 @@
                 Resample to the selected loop.<br>
                 Records the current master output with any effects to the selected loop.<br>
                 A short click will capture the previous loop length of the selected loop.<br>
-                A long hold will capture the current output until the button is released.<br>
-                After resampling all effects are reset to their default off position.
-                (all the way to the left or in the center as indicated). <br>
+                A long hold will capture the current output until the button is released. The hold time determines the new loop length.<br>
+                After resampling all effects are reset to their default off position (all the way to the left or in the center). <br>
                 Knobs will not respond until they have been turned back to default/off position. Then they can be activated again.
                 If you resample to a loop with its gain turned down, effects will not be reset and you can continue to modify the sound.
             </td>
@@ -221,7 +220,7 @@
         <tr>
             <td class="control-column"><div class="switch-icon" alt="switch"></div></td>
             <td class="name-column">Shift</td>
-            <td class="description-column">When set to on, the Pitch knob will stop controlling speed and turn into a master pitch shifter. The output will be pitch shifted without changing speed.</td>
+            <td class="description-column">When set to on, the Pitch knob will stop controlling speed and turn into a master pitch shifter. The output will be pitch shifted without changing speed and the shift will be applied to all loops currently playing.</td>
         </tr>
         
         <tr>
@@ -288,7 +287,7 @@
             <td class="control-column"><div class="button-icon" alt="button"></div></td>
             <td class="name-column">Random</td>
             <td class="description-column">Hold down to randomize all effect settings. When let go, the settings will return to current knob positions.<br>
-                 While holding randomize, effects can be changed by catching their randomized position with the knob. This allows you to keep all other randomized settings
+                While holding randomize, effects can be changed by catching their randomized position with the knob. This allows you to keep all other randomized settings
                 but change the pitch for example.<br>
                 The randomized sound can be kept by resampling while holding the Random button. Let go of the random button when you have finished resampling.
                 Be aware that any knobs not in their initial position will affect the sound after resampling.
@@ -298,7 +297,7 @@
         <tr>
             <td class="control-column"><div class="knob-indent-icon" alt="knob"></div></td>
             <td class="name-column">Fragment</td>
-            <td class="description-column">To the left applies fragmentation to the spectrum like a bad signal. To the right the sound is fragmented in time like crambled audio.</td>
+            <td class="description-column">To the left applies fragmentation to the spectrum like a bad signal. To the right the sound is fragmented in time like scrambled audio.</td>
         </tr>
         
         <tr>
@@ -334,7 +333,7 @@
         <tr>
             <td class="control-column"><div class="knob-icon" alt="knob"></div></td>
             <td class="name-column">Grains</td>
-            <td class="description-column">Add of a long granular delay. Knob sets dry/wet amount. Delay length is fixed. Feedback follows amount.</td>
+            <td class="description-column">Add a long granular delay. Knob sets dry/wet amount. Delay length is fixed. Feedback follows amount.</td>
         </tr>
         
         <tr>
@@ -347,10 +346,8 @@
         
     <h2>Comments:</h2>
     <p>
-    </p>
-    <p>
         When resampling, all the sound from all the loops and input is captured and recorded to the selected loop. 
-        If you want to resample only a specific loop, turn down the volume of other loops before resampling.
+        If you want to resample only a specific loop, turn down the volume of other loops.
     </p>
     <p>
         When using the short click resample, all changes made during the last loop length will be captured.
@@ -372,7 +369,7 @@
         Loops are not saved when powering off the unit.
     </p>
     <p>
-        When resampling and starting the unit, certain internal effect parameters are randomized. This avoid resonance on multiple resamplings.
+        When resampling and starting the unit, certain internal effect parameters are randomized.
     </p>
     <p>
         Only a momentary normally open foot pedal can be used. 
@@ -380,7 +377,7 @@
     </p>
     <p>
         The loops are free running and can only be synced through the timing of recording and resampling.
-        More precise timing control can be achieved by using the rec Click mode. 
+        More precise timing control can be achieved by using the rec click mode. 
         All loops can be set to the same length by holding down the Clear button for the desired length and then only overdubbing on the loops.
         Loop lengths can doubled or halfed by resampling the loop with the Pitch knob set to 12 semitones down or up.
     </p>
