@@ -132,12 +132,32 @@
         .description-column {
             line-height: 1.4;
         }
+
+        @media (max-width: 600px) {
+            table {
+                border-spacing: 0px 0px;
+            }
+            tr {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+            }
+            td {
+                display: block;
+            }
+            .description-column {
+                width: 100%;
+                padding-top: 6px;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>SRTI01 Looper Manual</h1>
 
-    <img src="srti01 looper 800.jpg" width="800">
+    <a href="srti01 looper 800.jpg" target="_blank">
+        <img src="srti01 looper 800.jpg" width="800" style="max-width: 100%; height: auto; display: block;">
+    </a>
 
     <h2>Overview:</h2>
     <p>
@@ -145,6 +165,7 @@
         Input can be a stereo signal or 1/2 mono signals.<br>
         11 master effects and 3 loop effects are available to manipulate the sound.<br>
         Loops can be individually pitched up and down and reversed.<br>
+        The effected output can be resampled back to a loop by pressing the Resample button.<br>
         All effects can be randomized by holding down the Random button. <br>
         Each loop can be set to degrade over time.<br>
         Needs 9V DC power supply (center negative).<br>
