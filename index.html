@@ -13,6 +13,7 @@
         body {
             background-color: black;
             color: #d3d3d3;
+            font-family: monospace;
             font-family: 'MONOSPACE821BOLDBT', monospace;
             margin: 0;
             padding: 20px;
@@ -52,9 +53,12 @@
             height: 50px;
             display: inline-block;
             vertical-align: middle;
-            background-image: url('knob-icon.svg');
+            background-image: url('knob.svg');
             background-size: contain;
             background-repeat: no-repeat;
+            stroke: white !important;
+            fill: white !important;
+            stroke: rgb(255, 255, 255) !important;
         }
                 
         .knob-indent-icon {
@@ -62,7 +66,7 @@
             height: 50px;
             display: inline-block;
             vertical-align: middle;
-            background-image: url('knob-indent-icon.svg');
+            background-image: url('indentknob.svg');
             background-size: contain;
             background-repeat: no-repeat;
         }
@@ -82,7 +86,7 @@
             height: 50px;
             display: inline-block;
             vertical-align: middle;
-            background-image: url('select-switch-icon.svg');
+            background-image: url('selectswitch.svg');
             background-size: contain;
             background-repeat: no-repeat;
         }
@@ -133,6 +137,10 @@
             line-height: 1.4;
         }
 
+        .bold {
+            font-weight: bold;
+        }
+
         @media (max-width: 600px) {
             table {
                 border-spacing: 0px 0px;
@@ -172,13 +180,24 @@
         An optional momentary normally open foot pedal can be used for hands free recording or overdubbing.<br>
     </p>
 
+    <h2>Quick guide:</h2>
+    <p>
+        1. Select a loop 1/2/3/4.<br>
+        2. Set the Rec Hold/Click switch to your preference. Hold mode will record while holding the button. Click mode will record from click to next click.<br>
+        3. Press Record to record a loop. The recording length determines the length of the loop.<br>
+        4. Press Overdub to add to the loop.<br>
+        5. Adjust the loop volume and master effects to your liking.<br>
+        6. Press Resample to capture the current output to the selected loop.<br>
+        7. Use Random to explore new sounds.<br>
+    </p>
+
     <h2>Controls:</h2>
 
     <table>
         <tr>
             <td class="control-column"><div class="select-switch-icon" alt="select switch"></div></td>
-            <td class="name-column">Select loop A/B/C/D</td>
-            <td class="description-column">All <span class="knockout">loop specific controls</span> work on the selected loop.</td>
+            <td class="name-column">Select loop 1/2/3/4</td>
+            <td class="description-column">All <span class="knockout bold">loop specific controls</span> work on the selected loop.</td>
         </tr>
        
         <tr>
@@ -253,7 +272,7 @@
         </tr>
         
         <tr>
-            <td class="control-column"><div class="knob-icon" alt="knob"></div></td>
+            <td class="control-column"><div class="slider-icon" alt="knob"></div></td>
             <td class="name-column">Input</td>
             <td class="description-column">Control the volume of the input. At the very top extra gain is applied for very low input signals.</td>
         </tr>
